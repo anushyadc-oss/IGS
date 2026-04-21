@@ -1,0 +1,78 @@
+site:
+  name: "Isha Global School"
+  tagline: "Inquiry · Freedom · Compassion"
+  location: "Kadampuliyur, Tamil Nadu, India"
+  phone: "9150720351"
+  email: "Ishaglobalschool@gmail.com"
+  trust: "Arumbu Educational Trust"
+
+pages:
+  home:
+    file: index.html
+    title: "Isha Global School Kadampuliyur | Best Holistic School in Tamil Nadu | Admissions Open 2026–27"
+    description: "Isha Global School, Kadampuliyur — Tamil Nadu's leading holistic, non-competitive school inspired by J. Krishnamurti. No ranks, no grades. Affordable fees. Admissions open 2026–27. Managed by Arumbu Educational Trust."
+
+  about:
+    file: about.html
+    title: "Why Choose Isha Global School Kadampuliyur | Holistic Education Tamil Nadu"
+    description: "Discover why Isha Global School is the best alternative school in Kadampuliyur. No rankings, no fear — raising thinkers, inquirers and communicators through J. Krishnamurti's philosophy."
+
+  curriculum:
+    file: curriculum.html
+    title: "Curriculum | Experiential & Inquiry-Based Learning | Isha Global School Tamil Nadu"
+    description: "Explore the unique curriculum at Isha Global School Kadampuliyur — inspired by Japanese methods, Finland education, and Reggio Emilia. Beyond academics: mindfulness, public speaking, arts, and additional languages."
+
+  scholarship:
+    file: scholarship.html
+    title: "Little Stars Scholarship | Free Education Support | Isha Global School Kadampuliyur"
+    description: "Apply for the Little Stars Scholarship at Isha Global School, Kadampuliyur. Arumbu Educational Trust supports families who cannot afford quality education. Admissions open 2026–27."
+
+  contact:
+    file: contact.html
+    title: "Admissions & Contact | Isha Global School Kadampuliyur | Apply Now 2026–27"
+    description: "Enrol your child at Isha Global School, Kadampuliyur. Contact us for admissions 2026–27. Call 9150720351 or email Ishaglobalschool@gmail.com. Managed by Arumbu Educational Trust."
+
+keywords:
+  branded:
+    - "Isha Global School"
+    - "Isha Global School Kadampuliyur"
+    - "IGS Kadampuliyur"
+    - "Arumbu Educational Trust school"
+
+  local:
+    - "school in Kadampuliyur"
+    - "best school in Kadampuliyur"
+    - "school admission Kadampuliyur 2026"
+    - "affordable school near Kadampuliyur"
+    - "school near Chidambaram"
+    - "primary school Kadampuliyur"
+    - "CBSE school Kadampuliyur"
+
+  philosophy:
+    - "Krishnamurti school Tamil Nadu"
+    - "holistic school Tamil Nadu"
+    - "no ranking no grades school India"
+    - "non-competitive school Tamil Nadu"
+    - "inquiry-based learning school Tamil Nadu"
+    - "experiential learning school Tamil Nadu"
+    - "child-led learning school India"
+    - "alternative school Tamil Nadu"
+    - "mindfulness school Tamil Nadu"
+
+  admission_intent:
+    - "school admission 2026 Tamil Nadu"
+    - "admissions open 2026-27 Tamil Nadu"
+    - "scholarship school Tamil Nadu"
+    - "affordable holistic school Tamil Nadu"
+    - "safe school with CCTV Tamil Nadu"
+    - "non-profit school with low fees Tamil Nadu"
+
+  long_tail:
+    - "school without exams and ranks Tamil Nadu"
+    - "Krishnamurti inspired school near me"
+    - "best holistic school for kids in Tamil Nadu"
+    - "school that focuses on emotional intelligence Tamil Nadu"
+    - "school with Japanese teaching method India"
+    - "school inspired by Finland education Tamil Nadu"
+    - "Reggio Emilia school Tamil Nadu"
+    - "best affordable school Kadampuliyur"
