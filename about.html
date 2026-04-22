@@ -89,15 +89,15 @@
     .pg-card h4{font-size:.92rem;color:var(--blue);font-weight:700;}
 
     /* ── Real life exposure ── */
-    .rle-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2rem;}
-    .rle-card{background:#fff;border-radius:var(--radius);padding:1.4rem .8rem;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;cursor:default;}
+    .rle-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem;margin-top:2rem;}
+    .rle-card{background:#fff;border-radius:var(--radius);padding:1rem .6rem;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;cursor:default;}
     .rle-card::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .35s ease;border-radius:var(--radius);z-index:0;}
     .rle-card:hover{transform:translateY(-10px) scale(1.04);box-shadow:0 16px 40px rgba(244,124,32,.25);}
     .rle-card:hover::before{opacity:.08;}
     .rle-card:hover .rle-icon{animation:rleBounce .5s ease;}
     .rle-card:hover h4{color:var(--orange);}
-    .rle-icon{font-size:2rem;margin-bottom:.6rem;display:block;position:relative;z-index:1;transition:transform .3s ease;}
-    .rle-card h4{font-size:.82rem;color:var(--blue);font-weight:700;line-height:1.4;position:relative;z-index:1;transition:color .3s ease;}
+    .rle-icon{font-size:1.6rem;margin-bottom:.5rem;display:block;position:relative;z-index:1;transition:transform .3s ease;}
+    .rle-card h4{font-size:.75rem;color:var(--blue);font-weight:700;line-height:1.4;position:relative;z-index:1;transition:color .3s ease;}
     @keyframes rleBounce{0%{transform:scale(1)}30%{transform:scale(1.35)}60%{transform:scale(.9)}100%{transform:scale(1)}}
 
     /* ── Green campus grid ── */
@@ -205,7 +205,7 @@
       .sr-steps{grid-template-columns:repeat(2,1fr);}
       .ipl-grid{grid-template-columns:repeat(2,1fr);}
       .pg-row{grid-template-columns:repeat(2,1fr);}
-      .rle-grid{grid-template-columns:repeat(2,1fr);}
+      .rle-grid{grid-template-columns:repeat(3,1fr);}
       .gc-grid{grid-template-columns:1fr;}
       .hwd-grid{grid-template-columns:1fr;}
       .gr-cols{grid-template-columns:1fr;}
