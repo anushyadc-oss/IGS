@@ -154,7 +154,10 @@
       <div class="events-track" id="evTrack">
 
         <div class="event-card">
-          <div class="ev-img-wrap"><img src="Pictures/isha_thulir.jpeg" alt="Isha Thulir" class="ev-img"/></div>
+          <div class="ev-img-wrap ev-gallery-wrap" data-gallery="thulir">
+            <img src="Pictures/isha_thulir.jpeg" alt="Isha Thulir" class="ev-img" data-index="0"/>
+            <img src="Pictures/IGS_logo_annualday.jpeg" alt="IGS Annual Day" class="ev-img" data-index="1"/>
+          </div>
           <div class="ev-body">
             <div class="ev-name">Isha Thulir 2026</div>
             <div class="ev-desc">Beginning of the Blossoms — our annual flagship celebration marking the flowering of young minds at IGS.</div>
@@ -392,27 +395,78 @@
 
 <!-- Event image popup -->
 <div class="ev-img-popup" id="evImgPopup">
+  <button class="ev-popup-close" id="evPopupClose">&#10005;</button>
+  <button class="ev-popup-nav ev-popup-prev" id="evPopupPrev" style="display:none">&#8592;</button>
   <img id="evImgFull" src="" alt=""/>
+  <button class="ev-popup-nav ev-popup-next" id="evPopupNext" style="display:none">&#8594;</button>
 </div>
 
 <script>
-  // Event image popup
-  document.querySelectorAll('.ev-img-wrap').forEach(function(wrap) {
+  // Gallery data
+  var galleries = {
+    thulir: [
+      { src: 'Pictures/isha_thulir.jpeg', alt: 'Isha Thulir' },
+      { src: 'Pictures/IGS_logo_annualday.jpeg', alt: 'IGS Annual Day' }
+    ]
+  };
+  var currentGallery = null, currentGalleryIdx = 0;
+
+  function openEvPopup(src, alt, gallery, idx) {
+    document.getElementById('evImgFull').src = src;
+    document.getElementById('evImgFull').alt = alt;
+    document.getElementById('evImgPopup').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    currentGallery = gallery || null;
+    currentGalleryIdx = idx || 0;
+    var hasNav = currentGallery && currentGallery.length > 1;
+    document.getElementById('evPopupPrev').style.display = hasNav ? 'flex' : 'none';
+    document.getElementById('evPopupNext').style.display = hasNav ? 'flex' : 'none';
+  }
+
+  function closeEvPopup() {
+    document.getElementById('evImgPopup').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function evNavigate(dir) {
+    if (!currentGallery) return;
+    currentGalleryIdx = (currentGalleryIdx + dir + currentGallery.length) % currentGallery.length;
+    var item = currentGallery[currentGalleryIdx];
+    document.getElementById('evImgFull').src = item.src;
+    document.getElementById('evImgFull').alt = item.alt;
+  }
+
+  // Single-photo event cards
+  document.querySelectorAll('.ev-img-wrap:not(.ev-gallery-wrap)').forEach(function(wrap) {
     wrap.addEventListener('click', function(e) {
       e.stopPropagation();
       var img = wrap.querySelector('.ev-img');
-      document.getElementById('evImgFull').src = img.src;
-      document.getElementById('evImgFull').alt = img.alt;
-      document.getElementById('evImgPopup').classList.add('open');
-      document.body.style.overflow = 'hidden';
+      openEvPopup(img.src, img.alt, null, 0);
     });
   });
-  document.getElementById('evImgPopup').addEventListener('click', function() {
-    this.classList.remove('open');
-    document.body.style.overflow = '';
+
+  // Gallery thumbnail clicks
+  document.querySelectorAll('.ev-gallery-wrap .ev-img').forEach(function(img) {
+    img.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var gallery = galleries[img.closest('.ev-gallery-wrap').dataset.gallery];
+      openEvPopup(gallery[+img.dataset.index].src, gallery[+img.dataset.index].alt, gallery, +img.dataset.index);
+    });
   });
+
+  document.getElementById('evPopupPrev').addEventListener('click', function(e) { e.stopPropagation(); evNavigate(-1); });
+  document.getElementById('evPopupNext').addEventListener('click', function(e) { e.stopPropagation(); evNavigate(1); });
+  document.getElementById('evPopupClose').addEventListener('click', function(e) { e.stopPropagation(); closeEvPopup(); });
+
+  document.getElementById('evImgPopup').addEventListener('click', function(e) {
+    if (e.target === this || e.target === document.getElementById('evImgFull')) closeEvPopup();
+  });
+
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') { document.getElementById('evImgPopup').classList.remove('open'); document.body.style.overflow = ''; }
+    if (!document.getElementById('evImgPopup').classList.contains('open')) return;
+    if (e.key === 'Escape') closeEvPopup();
+    if (e.key === 'ArrowLeft') evNavigate(-1);
+    if (e.key === 'ArrowRight') evNavigate(1);
   });
 
   // Mobile nav

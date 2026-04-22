@@ -177,10 +177,21 @@ nav {
 /* Event image full popup on hover */
 .ev-img-wrap::after { content:'Click to view'; position:absolute; bottom:8px; right:8px; background:rgba(0,0,0,.6); color:#fff; font-size:.68rem; font-weight:600; padding:4px 10px; border-radius:12px; opacity:0; transition:opacity .3s ease; pointer-events:none; }
 .ev-img-wrap:hover::after { opacity:1; }
-.ev-img-popup { display:none; position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:3000; align-items:center; justify-content:center; cursor:zoom-out; backdrop-filter:blur(6px); }
+.ev-img-popup { display:none; position:fixed; inset:0; background:rgba(0,0,0,.88); z-index:3000; align-items:center; justify-content:center; cursor:default; backdrop-filter:blur(6px); }
 .ev-img-popup.open { display:flex; }
-.ev-img-popup img { max-width:90vw; max-height:90vh; object-fit:contain; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,.5); animation:evPopIn .3s ease; }
+.ev-img-popup img { max-width:90vw; max-height:90vh; object-fit:contain; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,.5); animation:evPopIn .3s ease; cursor:zoom-out; }
 @keyframes evPopIn { from{opacity:0;transform:scale(.8)} to{opacity:1;transform:scale(1)} }
+.ev-popup-close { position:absolute; top:16px; right:16px; width:40px; height:40px; border-radius:50%; border:2px solid rgba(255,255,255,.55); background:rgba(0,0,0,.45); color:#fff; font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:10; transition:background .2s; }
+.ev-popup-close:hover { background:rgba(255,255,255,.25); }
+.ev-popup-nav { position:absolute; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%; border:2px solid rgba(255,255,255,.55); background:rgba(0,0,0,.45); color:#fff; font-size:1.5rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:10; transition:background .2s,border-color .2s; }
+.ev-popup-nav:hover { background:rgba(255,255,255,.2); border-color:#fff; }
+.ev-popup-prev { left:20px; }
+.ev-popup-next { right:20px; }
+.ev-gallery-wrap { cursor:default; display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+.ev-gallery-wrap::after { display:none; }
+.event-card:hover .ev-gallery-wrap .ev-img { transform:none; }
+.ev-gallery-wrap .ev-img { cursor:pointer; }
+.ev-gallery-wrap .ev-img:hover { transform:scale(1.06); }
 .ev-body { padding:18px 20px 20px; }
 .ev-name { font-size:1.05rem; font-weight:700; color:var(--blue); margin-bottom:6px; line-height:1.3; transition:color .3s ease; }
 .event-card:hover .ev-name { color:var(--orange); }
